@@ -1,0 +1,21 @@
+body {
+	font: normal 12px Arial,Helvetica,sans-serif;
+}
+
+#main {
+	margin: 0 auto;
+}
+
+#loading {
+	margin: 0 auto;
+	display: none;
+}
+
+h1 {
+	font: 500 24px Arial,Helvetica,sans-serif;
+	text-align: center;
+}
+
+canvas#chart {
+	margin: 0 auto;
+}
