@@ -10,6 +10,7 @@ reddit = praw.Reddit(client_id=client_id,
                      user_agent=user_agent,
                      username=username)
 
+
 def parse_added_kicked(submission):
     check_kicked = False
     check_added = False
@@ -39,6 +40,7 @@ def parse_added_kicked(submission):
 
     return added, kicked
 
+
 def parse_rank(flair_text):
     rmatch = re.search('#(\d+)', str(flair_text))
     rank = ''
@@ -46,6 +48,7 @@ def parse_rank(flair_text):
         rank = rmatch.group(1)
 
     return rank
+
 
 def get_current_subscribers():
     subscribers = {}
@@ -64,7 +67,6 @@ def get_current_subscribers():
                 check_on = True
                 continue
                 
-
         if check_on:
             if post.author and not subscribers.get(str(post.author)):
                 rank = parse_rank(post.author_flair_text)
@@ -84,8 +86,6 @@ def get_current_subscribers():
 
     return subscribers
     
-
-
 
 def parse_all_time():
     kicked_list = []
@@ -134,12 +134,12 @@ def parse_all_time():
     
     return users
 
+
 if __name__ == '__main__':
     try:
         command = sys.argv[1]
     except IndexError:
         command = 'generate'
-
 
     if command == 'subscribers':
         print(get_current_subscribers())
